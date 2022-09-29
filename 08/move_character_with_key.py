@@ -44,12 +44,12 @@ while running:
     frame = (frame + 1) % 8
     x += x_dir*5
     if x > TUK_WIDTH or x < 0:
-        running = False
-        # x_dir = 0
+        # running = False
+        x_dir = 0
     y += y_dir*5
     if y > TUK_HEIGHT or y < 0:
-        running = False
-        # y_dir = 0
+        # running = False
+        y_dir = 0
     delay(0.01)
 
 close_canvas()
