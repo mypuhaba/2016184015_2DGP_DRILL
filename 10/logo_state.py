@@ -1,14 +1,14 @@
 from pico2d import *
+import game_framework
+import title_state
 
 image = None
-running = True
 logo_time = 0.0
 
 def enter():
     global image, logo_time
     image = load_image('tuk_credit.png')
     logo_time = 0.0
-    running = True
     pass
 
 def exit():
@@ -17,12 +17,13 @@ def exit():
     pass
 
 def update():
-    global running
     global logo_time
     delay(0.05)
     logo_time += 0.05
     if logo_time > 1.0:
-        running = False
+        logo_time = 0
+        # game_framework.quit()
+        game_framework.change_state(title_state)
     pass
 
 def draw():
